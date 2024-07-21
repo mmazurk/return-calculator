@@ -1,4 +1,4 @@
-from returns_module import generate_returns
+from src.methods.generate_returns import generate_returns
 
 
 def make_returns():

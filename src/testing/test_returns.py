@@ -1,5 +1,6 @@
+import pandas as pd
 from numpy import average
-from returns_module import generate_value
+from src.methods.generate_returns import generate_value
 
 
 def test_returns(n):
@@ -10,9 +11,10 @@ def test_returns(n):
         returns.append(current_value)
         previous_value = current_value
 
-    ten_year = float(average(returns[0:120]))*100
-    twenty_year = float(average(returns[0:240]))*100
-    return ten_year, twenty_year
+    # returns = [x * 100 for x in returns]
+    df = pd.DataFrame(returns, columns=["Returns"], index=None)
+    return df
 
 
-test_returns(300)
+df = test_returns(120)
+df.to_clipboard()

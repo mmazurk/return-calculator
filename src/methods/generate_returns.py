@@ -6,10 +6,11 @@ def generate_value(previous_value):
     if np.random.rand() < 0.05:
         value = norm.ppf(np.random.rand(), loc=0, scale=0.1)
     else:
-        scale = .025*(1 + 0.5*abs(previous_value))
-        value = norm.ppf(np.random.rand(), loc=0.008, scale=scale)
+        scale = .02*(1 + 0.5*abs(previous_value))
+        print(scale)
+        value = norm.ppf(np.random.rand(), loc=0.0138, scale=scale)
 
-    return round(float(value), 3)
+    return float(value)
 
 
 def generate_returns(n):
