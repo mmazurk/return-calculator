@@ -1,6 +1,6 @@
 from ast import List
 import unittest
-from src.returns_module import generate_value, generate_returns
+from src.methods.generate_returns import generate_value, generate_returns
 
 
 class TestMyModule(unittest.TestCase):
